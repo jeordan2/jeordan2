@@ -18,6 +18,10 @@ a {
   color: coral;
 }
 
+.cyan {
+  color: cyan;
+}
+
 /*this part is stolen from insect.christmas/styles.css */
 video {
   position: fixed;
