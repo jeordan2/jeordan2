@@ -2,14 +2,16 @@ body {
     background-color: black;
     font-family: monospace;
     font-size: 15px;
+    text-align: center;
 }
 
+/*all these colours are stolen from insect.christmas*/
 p {
-  color: green;
+  color: chartreuse;
 }
 
 h1, h2 {
-  color: purple;
+  color: slateblue;
 }
 
 a {
@@ -24,8 +26,4 @@ video {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
-}
-
-table, th, td {
-  border: 3px solid green;
 }
