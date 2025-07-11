@@ -7,3 +7,7 @@ the projext for potentially jeordan.space, my website.
 3. ~~make css~~
 4. think about js
 5. finish this todo list
+
+# features
+1. ~~stars~~
+2. tables
