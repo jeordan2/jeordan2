@@ -1,40 +1,89 @@
 <!DOCTYPE html>
+
 <head>
     <title>jeordan</title>
     <link rel="stylesheet" href="./css/styles.css">
     <script src="./js/script.js"> </script>
+</head>
+
 <body>
     <video autoplay muted loop src="./videos/stars.mp4" id="stars" oncanplay="this.play()"></video>
-    
-    <!--add links here-->
-    <p>links</p>
-    <!--add music player-->
-    <p>music player</p>
-    <!--im not gonna lie, this entire thing is just a rip-off of insect.christmas-->
-    <h1>jeordan.space</h1>
-    <p style="color:cyan">home - status:</p>
-    <p>every second on social media is brain poison</p>
+<!-- 
+    <h1 style="font-size: 30px;">under construction</h1>
+-->
 
-    <h2>about:</h2>
+    <div class="links">
+        <table class="linkstable">
+            <tr class="linksrow">
+                <td class="linksdata">
+                    <!--add links here-->
+                    <p>links</p>
+                </td>
+            </tr>
+            <tr class="musicrow">
+                <td class="musicdata">
+                    <!--add music player-->
+                    <p>music player</p>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-    <h2>info:</h2>
-    
-    <p>> jeordan's website</p>
-    
-    <p>> lorum ipsum <a>[link]</a></p>
-    <p>> dolar <a>[link]</a> sit amet</p>
-    <p>> lorum ipsum dolar sit amet</p>
-    <p>> <a>[link]</a> ipsum amet</p>
-    
-    <p>news:</p>
-    
-    <p>diagnostics:</p>
-    
-    <p>00/00/00 -> lorum ipsum</p>
-    <p>00/00/00 -> lorum ipsum</p>
-    <p>00/00/00 -> lorum ipsum</p>
-    <p>00/00/00 -> lorum ipsum</p>
-    
-    <p>> firefox?</p>
-    <p>> linux?</p>
+    <div class="main">
+        <table class="maintable">
+            <tr class="headerrow">
+                <td class="headerdata">
+                    <!--im not gonna lie, this entire thing is just a rip-off of insect.christmas-->
+                    <h1>jeordan.space</h1>
+                    <p style="color:cyan">home - status:</p>
+                    <p>every second on social media is brain poison</p>
+                </td>
+            </tr>
+            <tr class="contentrow">
+                <td class="contentdata">
+                    <table class="stuff">
+                        <tr class="stuffheader">
+                            <td class="aboutheader">
+                                <h2 class="abouttext">about:</h2>
+                            </td>
+                            <td class="infoheader">
+                                <h2 class="infotext"> info:</h2>
+                            </td>
+                        </tr>
+                        <tr class="stuffcontent">
+                            <td class="aboutcontent">
+                                <p>> jeordan's website</p>
+                            </td>
+                            <td class="infocontent">
+                                <p>> lorum ipsum <a>[link]</a></p>
+                                <p>> dolar <a>[link]</a> sit amet</p>
+                                <p>> lorum ipsum dolar sit amet</p>
+                                <p>> <a>[link]</a> ipsum amet</p>
+                            </td>
+                        </tr>
+                        <tr class="stuffheader">
+                            <td class="newsheader">
+                                <p>news:</p>
+                            </td>
+                            <td class="diagnosticsheader">
+                                <p>diagnostics:</p>
+                            </td>
+                        </tr>
+                        <tr class="stuffcontent">
+                            <td class="newscontent">
+                                <p>00/00/00 -> lorum ipsum</p>
+                                <p>00/00/00 -> lorum ipsum</p>
+                                <p>00/00/00 -> lorum ipsum</p>
+                                <p>00/00/00 -> lorum ipsum</p>
+                            </td>
+                            <td class="diagnosticscontent">
+                                <p>> firefox?</p>
+                                <p>> linux?</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>

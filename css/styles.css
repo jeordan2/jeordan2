@@ -25,5 +25,36 @@ video {
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: -1;
+  z-index: -2;
 }
+
+/*tables*/
+/*links table*/
+.linkstable, .linksrow, .musicrow {
+  border: 3px solid chartreuse;
+  border-collapse: collapse;
+}
+
+.linksdata, .musicdata {
+  width: 50%;
+}
+
+.links {
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 2.5%;
+}
+
+/*main table*/
+.maintable, .headerrow, .contentrow {
+  border: 3px solid chartreuse;
+  border-collapse: collapse;
+}
+
+.main {
+  position: absolute;
+  margin-top: 2.5%;
+  margin-left: 15%;
+}
+
+/*sidenav table*/
