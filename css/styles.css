@@ -1,6 +1,19 @@
 body {
     background-color: black;
-    color: white;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+p {
+  color: green;
+}
+
+h1, h2 {
+  color: purple;
+}
+
+a {
+  color: coral;
 }
 
 /*this part is stolen from insect.christmas/styles.css */
@@ -11,4 +24,8 @@ video {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
+}
+
+table, th, td {
+  border: 3px solid green;
 }

@@ -11,3 +11,6 @@ the projext for potentially jeordan.space, my website.
 # features
 1. ~~stars~~
 2. tables
+3. links
+4. music player
+5. sidenav
