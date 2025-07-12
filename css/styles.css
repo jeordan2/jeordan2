@@ -82,27 +82,21 @@ video {
   }
   
   .contentdata {
-    height: 60vh;
+    height: 50vh;
   }
 
   /*stuff table*/
   .content {
     height: 100%;
     overflow: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
   }
-  .stuff {}
-  .stuffheader {}
-  .aboutheader {}
-  .abouttext {}
-  .infoheader {}
-  .infotext {}
-  .stuffcontent {}
-  .aboutcontent {}
-  .infocontent {}
-  .newsheader {}
-  .diagnosticsheader {}
-  .newscontent {}
-  .diagnosticscontent {}
+  .stuff, .stuffheader, .aboutheader, .infoheader, .stuffcontent, .aboutcontent, .infocontent, .newsheader, .diagnosticsheader, .newscontent, .diagnosticscontent, .webringheader, .webringcontent {
+    border: 3px solid chartreuse;
+    border-collapse: collapse;}
 
 /*sidenav table*/
 .sidenavtable, .sidenavrow, .timerow {

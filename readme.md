@@ -13,7 +13,7 @@ the projext for potentially jeordan.space, my website.
 # features
 1. ~~stars~~
 2. ~~tables~~
-3. ~~sidenav~~
+3. sidenav
 4. links
 5. music player
 
