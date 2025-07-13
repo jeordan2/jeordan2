@@ -15,7 +15,7 @@ the projext for potentially jeordan.space, my website.
 2. ~~tables~~
 3. sidenav
 4. links
-5. music player
+5. ~~music player~~
 
 # issues
 1. ~~main table height~~
