@@ -1,3 +1,4 @@
+/*so much of this is stolen from insect.christmas, might change some of it later*/
 body {
     background-color: black;
     font-family: monospace;
@@ -18,12 +19,74 @@ a {
   color: coral;
 }
 
+* {
+  image-rendering: pixelated;
+}
+
 .cyan {
   color: cyan;
 }
 
+/*just for debugging the custom buttons*/
+.ostplayer {
+  height: 5vh; 
+  width: 20vh;
+}
+
+/*cutson buttons*/
+.playbutton {
+  height: 5vh;
+}
+
+/*entrance*/
+.entrance {
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 2s ease;
+  pointer-events: all;
+}
+
+/*this part was made mostly by chatgpt because i didnt know how to*/
+.entrance.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wall{
+  background-image: url("../images/wall1.webp");
+  background-repeat: repeat;
+  background-size: 33vh;
+  height: 76vh;
+  z-index: 1;
+  /*masking part written mostly by chatgpt because masking is hard*/
+  mask-image: 
+    linear-gradient(to bottom, black 33vh, transparent 0vh, transparent 68vh, black 68vh),
+    linear-gradient(to right, black 62vw, transparent 0vw, transparent 73vw, black 0vw);
+  mask-composite: multiply;
+}
+
+.door {
+  position: absolute;
+  margin-top: 25vh;
+  width: 50vh;
+  z-index: 2;
+}
+
+.floor {
+  margin-top: -8vh;
+  background-image: url("../images/floor1.webp");
+  background-repeat: repeat;
+  background-size: 33vh;
+  height: 32vh;
+}
+
 /*this part is stolen from insect.christmas/styles.css */
-video {
+.stars {
   position: fixed;
   top: 0;
   left: 0;

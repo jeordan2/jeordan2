@@ -3,14 +3,18 @@
     <head>
         <title>jeordan</title>
         <link rel="stylesheet" href="./css/styles.css">
-        <script src="./js/script.js"> </script>
     </head>
 
     <body>
-        <video autoplay muted loop src="./videos/stars.mp4" id="stars" oncanplay="this.play()"></video>
-    <!-- 
-        <h1 style="font-size: 30px;">under construction</h1>
-    -->
+        <div class="entrance" id="entrance">
+            <img src="./images/doorclosed.webp" class="door" id="doorbutton">
+            <div class="wall"></div>
+            <div class="floor"></div>
+        </div>
+
+        <video autoplay muted loop src="./videos/stars.mp4" id="stars" class="stars" oncanplay="this.play()"></video>
+
+        <h1 style="font-size: 30px; position: absolute; z-index: 3; background-color: black; color: white;">under construction</h1>
 
         <div class="links">
             <table class="linkstable">
@@ -22,10 +26,13 @@
                 </tr>
                 <tr class="musicrow">
                     <td class="musicdata">
-                        <audio controls autoplay loop style="height: 5vh; width: 20vh;">
-                            <source src="./ost/song1.mp3" type="audio/mpeg">
+                        <audio autoplay loop id="ostplayer" class="ostplayer">
+                            <source src="./ost/bugcore2.mp3" type="audio/mpeg">
                             no audio for you! use firefox!
                         </audio>
+                        <img src="./images/music.webp" id="musiccion" class="playbutton" title="bugcore - lilac boy">
+                        <img src="./images/play.webp" id="playbutton" class="playbutton">
+                        <img src="./images/sound.webp" id="soundbutton" class="playbutton">
                     </td>
                 </tr>
             </table>
@@ -118,5 +125,6 @@
                 </tr>
             </table>
         </div>
+        <script src="./js/script.js"></script>
     </body>
 </html>

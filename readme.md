@@ -5,10 +5,11 @@ the projext for potentially jeordan.space, my website.
 1. ~~make repo~~
 2. ~~make index.html~~
 3. ~~make css~~
-4. think about js
+4. ~~think about js~~
 5. make a song
 6. other pages
-7. finish this todo list
+7. fill in home page
+100. finish this todo list
 
 # features
 1. ~~stars~~
@@ -16,6 +17,8 @@ the projext for potentially jeordan.space, my website.
 3. sidenav
 4. links
 5. ~~music player~~
+6. door
 
 # issues
 1. ~~main table height~~
+2. unoriginal song
