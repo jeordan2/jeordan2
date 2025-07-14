@@ -123,6 +123,10 @@ a {
   margin-left: 6.25%;
 }
 
+.linksimg {
+  width: 19vh;
+}
+
   /*main table*/
   .maintable, .headerrow, .contentrow {
     border: 3px solid chartreuse;
