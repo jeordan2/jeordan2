@@ -22,3 +22,4 @@ the projext for potentially jeordan.space, my website.
 # issues
 1. ~~main table height~~
 2. unoriginal song
+3. remove under construction
