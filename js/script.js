@@ -9,7 +9,7 @@ const musicIcon = document.getElementById("musiccion");
 let isPlaying = true;
 let isMuted = false;
 
-entrance.addEventListener("click", () => {
+door.addEventListener("click", () => {
   audio.play().then(() => {
     door.src = "./images/dooropened.webp";
     setTimeout(entering, 1000)
