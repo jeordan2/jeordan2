@@ -4,6 +4,8 @@ body {
     font-family: monospace;
     font-size: 2.3vh;
     text-align: center;
+    /*literally stolen from insect.christmas*/
+    cursor: url('../images/cursor.webp'), auto;
 }
 
 /*all these colours are stolen from insect.christmas*/
@@ -25,6 +27,15 @@ a {
 
 .cyan {
   color: cyan;
+}
+
+/*all cursors stolen from insect christmas an recoloured a bit*/
+a, button, .clickable {
+  cursor: url('../images/click.webp'), pointer;
+}
+
+.smile {
+  cursor: url('../images/smile.webp'), pointer;
 }
 
 /*just for debugging the custom buttons*/
