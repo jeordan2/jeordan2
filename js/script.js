@@ -114,3 +114,26 @@ soundImg.addEventListener("click", () => {
     musicIcon.src = "./images/music.webp";
   }
 });
+
+// check browser and os
+
+const firefoxElement = document.getElementById("firefox");
+const linuxElement = document.getElementById("linux");
+
+const ua = navigator.userAgent.toLowerCase();
+const platform = navigator.platform.toLowerCase();
+
+const isFirefox = ua.includes("firefox");
+const isLinux = platform.includes("linux");
+
+if (isFirefox) {
+  firefoxElement.textContent = "> thanks for using firefox.";
+} else {
+  firefoxElement.textContent = "> use firefox.";
+}
+
+if (isLinux) {
+  linuxElement.textContent = "> thanks for using linux.";
+} else {
+  linuxElement.textContent = "> use linux.";
+}
