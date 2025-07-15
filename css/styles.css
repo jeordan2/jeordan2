@@ -2,7 +2,7 @@
 body {
     background-color: black;
     font-family: monospace;
-    font-size: 15px;
+    font-size: 2vh;
     text-align: center;
 }
 
@@ -98,7 +98,7 @@ a {
 /*tables*/
 /*links table*/
 .linkstable, .linksrow, .musicrow {
-  border: 3px solid chartreuse;
+  border: 0.5vh solid chartreuse;
   border-collapse: collapse;
 }
 
@@ -129,7 +129,7 @@ a {
 
   /*main table*/
   .maintable, .headerrow, .contentrow {
-    border: 3px solid chartreuse;
+    border: 0.5vh solid chartreuse;
     border-collapse: collapse;
   }
 
@@ -162,12 +162,12 @@ a {
     padding-bottom: 5vh;
   }
   .stuff, .stuffheader, .aboutheader, .infoheader, .stuffcontent, .aboutcontent, .infocontent, .newsheader, .diagnosticsheader, .newscontent, .diagnosticscontent, .webringheader, .webringcontent {
-    border: 3px solid chartreuse;
+    border: 0.5vh solid chartreuse;
     border-collapse: collapse;}
 
 /*sidenav table*/
 .sidenavtable, .sidenavrow, .timerow {
-  border: 3px solid chartreuse;
+  border: 0.5vh solid chartreuse;
   border-collapse: collapse;
 }
 
