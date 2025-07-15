@@ -129,11 +129,11 @@ const isLinux = platform.includes("linux");
 if (isFirefox) {
   firefoxElement.textContent = "> thanks for using firefox.";
 } else {
-  firefoxElement.textContent = "> use firefox.";
+  firefoxElement.textContent = "> switch to firefox...";
 }
 
 if (isLinux) {
   linuxElement.textContent = "> thanks for using linux.";
 } else {
-  linuxElement.textContent = "> use linux.";
+  linuxElement.textContent = "> switch to linux...";
 }
