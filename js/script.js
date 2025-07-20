@@ -24,14 +24,15 @@ function startPlaybackWithFade() {
 
   const fadeDuration = 3000;
   const startTime = performance.now();
+  const maxVolume = 0.25;
 
   const playPromise = audio.play();
   if (playPromise !== undefined) {
     playPromise.then(() => {
       function fadeInVolume(currentTime) {
         const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / fadeDuration, 0.25);
-        audio.volume = progress;
+        const progress = Math.min(elapsed / fadeDuration, 1);
+        audio.volume = progress * maxVolume;
         if (progress < 1) {
           requestAnimationFrame(fadeInVolume);
         }
