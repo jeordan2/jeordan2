@@ -6,19 +6,19 @@ const entrance = document.getElementById("entrance");
 const door = document.getElementById("doorbutton");
 const musicIcon = document.getElementById("musiccion");
 
-let isPlaying = true;
+let isPlaying = false;
 let isMuted = false;
+let userInteracted = false;
+let wasPlayingBeforeHide = false;
 
 door.addEventListener("click", () => {
-  audio.play().then(() => {
-    door.src = "./images/dooropened.webp";
-    setTimeout(entering, 1000)
-  }).catch(err => {
-    console.error("Playback failed:", err);
-  });
+  userInteracted = true;
+  startPlaybackWithFade();
+  door.src = "./images/dooropened.webp";
+  setTimeout(enteringDone, 1000);
 });
 
-function entering() {
+function startPlaybackWithFade() {
   audio.muted = false;
   audio.volume = 0;
 
@@ -26,33 +26,29 @@ function entering() {
   const startTime = performance.now();
 
   const playPromise = audio.play();
-
   if (playPromise !== undefined) {
     playPromise.then(() => {
       function fadeInVolume(currentTime) {
         const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / fadeDuration, 0.25);
+        const progress = Math.min(elapsed / fadeDuration, 1);
         audio.volume = progress;
-
         if (progress < 1) {
           requestAnimationFrame(fadeInVolume);
         }
       }
-
       requestAnimationFrame(fadeInVolume);
-    }).catch((err) => {
-      console.error("Audio playback blocked or failed:", err);
+      setPlayingUI(true);
+    }).catch(err => {
+      console.error("Playback failed:", err);
     });
   }
+}
 
+function enteringDone() {
   entrance.classList.add("hidden");
-
   setTimeout(() => {
     entrance.remove();
-  }, fadeDuration);
-
-  isPlaying = true;
-  playImg.src = "./images/pause.webp";
+  }, 3000);
 }
 
 audio.addEventListener("timeupdate", () => {
@@ -60,41 +56,43 @@ audio.addEventListener("timeupdate", () => {
   const minutes = Math.floor(current / 60);
   const seconds = current % 60;
   const formatted = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
   musicIcon.title = `bugcore - lilac boy (${formatted})`;
 });
 
 window.addEventListener("load", () => {
-  audio.play().catch(err => {
-    console.log("Autoplay blocked:", err);
-  });
+  audio.pause();
+  audio.currentTime = 0;
+  setPlayingUI(false);
 });
 
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
+    wasPlayingBeforeHide = !audio.paused;
     audio.pause();
-    isPlaying = false;
-    playImg.src = "./images/play.webp";
-    musicIcon.src = "./images/music2.webp";
-  } else if (!isMuted) {
-    audio.play();
-    isPlaying = true;
-    playImg.src = "./images/pause.webp";
-    musicIcon.src = "./images/music.webp";
+    setPlayingUI(false);
+  } else {
+    if (userInteracted && wasPlayingBeforeHide && !isMuted) {
+      audio.play().then(() => {
+        setPlayingUI(true);
+      }).catch(err => {
+        console.log("Playback blocked on refocus:", err);
+      });
+    }
   }
 });
 
 playImg.addEventListener("click", () => {
-  if (isPlaying) {
+  userInteracted = true;
+  if (!audio.paused) {
     audio.pause();
-    playImg.src = "./images/play.webp";
-    musicIcon.src = "./images/music2.webp";
+    setPlayingUI(false);
   } else {
-    audio.play();
-    playImg.src = "./images/pause.webp";
-    musicIcon.src = "./images/music.webp";
+    audio.play().then(() => {
+      setPlayingUI(true);
+    }).catch(err => {
+      console.error("Playback failed:", err);
+    });
   }
-  isPlaying = !isPlaying;
 });
 
 soundImg.addEventListener("click", () => {
@@ -103,19 +101,23 @@ soundImg.addEventListener("click", () => {
   soundImg.src = isMuted ? "./images/mute.webp" : "./images/sound.webp";
 
   if (isMuted) {
-    audio.pause();
-    isPlaying = false;
-    playImg.src = "./images/play.webp";
-    musicIcon.src = "./images/music2.webp";
-  } else if (!document.hidden) {
-    audio.play();
-    isPlaying = true;
-    playImg.src = "./images/pause.webp";
-    musicIcon.src = "./images/music.webp";
+    if (!audio.paused) {
+      audio.pause();
+      setPlayingUI(false);
+    }
+  } else {
+    if (userInteracted && audio.paused && !document.hidden) {
+      audio.play().then(() => setPlayingUI(true))
+        .catch(err => console.error("Playback failed:", err));
+    }
   }
 });
 
-// check browser and os
+function setPlayingUI(playing) {
+  isPlaying = playing;
+  playImg.src = playing ? "./images/pause.webp" : "./images/play.webp";
+  musicIcon.src = playing ? "./images/music.webp" : "./images/music2.webp";
+}
 
 const firefoxElement = document.getElementById("firefox");
 const linuxElement = document.getElementById("linux");
@@ -126,14 +128,5 @@ const platform = navigator.platform.toLowerCase();
 const isFirefox = ua.includes("firefox");
 const isLinux = platform.includes("linux");
 
-if (isFirefox) {
-  firefoxElement.textContent = "> thanks for using firefox.";
-} else {
-  firefoxElement.textContent = "> switch to firefox...";
-}
-
-if (isLinux) {
-  linuxElement.textContent = "> thanks for using linux.";
-} else {
-  linuxElement.textContent = "> switch to linux...";
-}
+firefoxElement.textContent = isFirefox ? "> thanks for using firefox." : "> switch to firefox...";
+linuxElement.textContent   = isLinux   ? "> thanks for using linux."   : "> switch to linux...";
