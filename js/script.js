@@ -32,7 +32,7 @@ function startPlaybackWithFade() {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / fadeDuration, 1);
         audio.volume = progress;
-        if (progress < 1) {
+        if (progress < 0.5) {
           requestAnimationFrame(fadeInVolume);
         }
       }
