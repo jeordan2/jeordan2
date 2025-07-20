@@ -72,7 +72,7 @@ a, button, .clickable {
   background-image: url("../images/wall1.webp");
   background-repeat: repeat;
   background-size: 33vh;
-  height: 76vh;
+  height: 69vh;
   z-index: 1;
   /*masking part written mostly by chatgpt because masking is hard*/
   mask-image: 
@@ -88,12 +88,20 @@ a, button, .clickable {
   z-index: 2;
 }
 
+.boardsmall {
+  position: absolute;
+  margin-top: 25vh;
+  margin-left: -27vw;
+  width: 15vw;
+  z-index: 2;
+}
+
 .floor {
-  margin-top: -8vh;
+  margin-top: 0vh;
   background-image: url("../images/floor1.webp");
   background-repeat: repeat;
   background-size: 33vh;
-  height: 32vh;
+  height: 31vh;
 }
 
 /*this part is stolen from insect.christmas/styles.css */
