@@ -114,6 +114,19 @@ a, button, .clickable {
   z-index: -2;
 }
 
+/*board thing*/
+.boarder {
+  display: none;
+  position: absolute;
+  z-index: 4;
+}
+
+.board {
+  width: 75vw;
+  margin-left: 12vw;
+  margin-top: 10vh;
+}
+
 /*tables*/
 /*links table*/
 .linkstable, .linksrow, .musicrow {
